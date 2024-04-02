@@ -1,0 +1,211 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    background: linear-gradient(#395886, #8AAEE0, #D5DEEF, #D5DEEF);
+}
+nav{
+    text-align: center;
+    padding: 5px;
+    margin: 0;
+}
+nav ul{
+    list-style-type: none;
+}
+nav ul li{
+    display: inline;
+    margin-left: 20px;
+    border-radius: 30PX;
+    background-color: #B1B6BF;
+    padding: 10px;
+    box-shadow: 0px 0px 20px #804E49;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+}
+nav ul li:hover{
+    background-color: #804E49;
+    box-shadow: 0px 0px 40px #fff;
+}
+.main{
+    display: flex;
+    margin: 50px;
+    height: 500px;
+}
+.one{
+    flex: 1;
+}
+.container {
+    width: 100%;
+    margin-left: 20px;
+    display: flex;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #0A122A;
+}
+.lst{
+    box-shadow: 0px 0px 10px#FBFAF8;
+    border-radius: 20px;
+    width: 200px;
+    padding: 20px;
+    margin: 30px;
+    height: 250px;
+    background-color: #804E49;
+}
+.lst button{
+    background-color: #395886;
+    font-weight: bold;
+}
+.lst button:hover{
+    background-color: #0A122A;
+}
+#expense-list{
+    background-color: #FBFAF8;
+    color: #000;
+    border-radius: 8px;
+}
+h1 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+input, button {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #804E49;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #395886;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+#scene{
+    position: relative; 
+    border-radius: 8px;
+    height: 500px;
+    background: linear-gradient(#B1B6BF, #804E49, #0A122A);
+}
+.text{
+    color: #ffff;
+    padding: 20px;
+    float: left;
+}
+.but button a{
+    text-decoration: none;
+    color: #fff;
+}
+#analytics{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 50px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #B1B6BF;
+}
+.first{
+    display: flex;
+    margin-left: 50px;
+}
+.second{
+    display: flex;
+    margin-left: 90px;
+}
+.card{
+    position: relative;
+    margin-left: 10px;
+    display: inline-block;
+}
+.card img{
+    width: 100%;
+    height: 300px;
+    transition: transform 0.3s ease-in-out;
+}
+.card img:hover{
+    transform: scale(1.1);
+    margin: 5px;
+    box-shadow: 0px 0px 40px #000;
+}
+.card h3 {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    color: #fff;
+    font-weight: 550;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    background-color: #395886;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.card:hover h3 {
+    opacity: 1; 
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .lst,
+    .first,
+    .tips,
+    .second,
+    .card {
+        display: block;
+        margin: 0 auto; 
+    }
+    .main {
+        display: block;
+        margin: 10px;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        margin: 10px auto; 
+    }
+    #analytics {
+        display: block;
+        padding: 10px;
+    }
+    nav ul li {
+        display: block;
+        margin: 10px auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    nav ul li {
+        display: block;
+        margin: 10px auto;
+    }
+}

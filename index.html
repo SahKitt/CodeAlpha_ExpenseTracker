@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <!-- ///////link three js -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <!-- /////////cssss -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <!-- /////navigation bar -->
+    <nav>
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#analytics">Analytics</a></li>
+            <li><a href="#tip">Tips</a></li>
+        </ul>
+    </nav>
+    <!-- /////navigation bar -->
+<!-- ////////////// -->
+    <div class="main">
+         <!-- //////3d model -->
+        <div class="one">
+        <div id="scene">
+            <div class="text">
+            <h3 class="typewriter">Konichiwaa!I am Suki</h3>
+            <h3 class="typewriter">Your personal Expense Tracker</h3>
+            </div>
+        </div>  
+        </div>
+        <!-- ////////3d model -->
+
+
+    <!-- ///////tracker -->
+    <div class="container">
+        <div class="listing">
+            <h2>Expense Tracker</h2>
+            <h3>Start by adding your expenses below</h3>
+        <form id="expense-form">
+            <input type="text" id="expense-name" placeholder="Expense Name" required>
+            <input type="number" id="expense-amount" placeholder="Expense Amount" required>
+            <button type="submit">Add Expense</button>
+        </form>
+        
+        <ul id="expense-list"></ul>
+        </div>
+        <div class="lst">
+            <h3>Tips!</h3>
+            <p>
+                Climate refers to the characteristic weather
+                 conditions of a particular region over a long term, 
+                 typically defined by averaging weather patterns over at least 30 years. 
+            </p>
+
+            <div class="but">
+                <button><a href="#tip">More</a></button>
+            </div>
+        </div>
+    </div>
+    <!-- //////tracker -->
+   </div>
+   <!-- /////////////// -->
+
+
+    <!-- //analytics -->
+    <h2 style="color: #000; text-align: center;">Analytics:</h2>
+   <div id="analytics">
+    <div id="chart-container" class="chart-container">
+        <canvas id="expense-chart"></canvas>
+    </div>
+    
+     <div id="exp">
+        <canvas id="radar-skip-point-graph"></canvas>
+     </div>
+   </div>
+   <!-- ///////analytics -->
+  
+      <!-- /////////tip section -->
+      <h2 style="color: #000; margin-left: 50px;">Click image for more!</h2>
+      <div class="tips" id="tip">
+        <!-- /////col one -->
+        <div class="first">
+            <div class="card">
+                <a href="https://youtu.be/hAWjdYcfaNs?si=ebJddcYqHWGp9rP3"><img src="one (1).jpeg" alt="Avatar"></a>
+                <h3>Family</h3>
+              </div>
+              <div class="card">
+                <a href="https://youtu.be/v6bx9g-mqyo?si=wr90wAophJ4hy47x"><img src="one (2).jpeg" alt="Avatar" ></a>
+                <h3>Business</h3>
+              </div>
+              <div class="card">
+                <a href="https://youtu.be/QjwdYbWvx5M?si=rVKc7DepEgi24bDI"><img src="one (3).jpeg" alt="Avatar" ></a>
+                <h3>Stocks/Forex</h3>
+              </div>
+        </div>
+        <!-- //////col one -->
+        <!-- ///////col two -->
+        <div class="second">
+            <div class="card">
+                <a href="https://youtu.be/by4jOuy4Zxo?si=sCr89gBzCEAzHB_K"><img src="one (4).jpeg" alt="Avatar" ></a>
+                <h3>RealEstate</h3>
+              </div>
+              <div class="card">
+                <a href="https://youtu.be/DtUCHpY_108?si=ONF1CIpfMAwbIAs3"><img src="one (5).jpeg" alt="Avatar" ></a>
+                <h3>Entertainment</h3>
+              </div>
+              <div class="card">
+                <a href="https://youtu.be/JgOecvGJj7E?si=dZhhj4OTRNriKYrg"><img src="one (6).jpeg" alt="Avatar" ></a>
+                <h3>Savings</h3>
+              </div>
+        </div>
+        <!-- ///////col two -->
+      </div>
+      <!-- //////////tip section -->
+
+   <!-- /////javascript -->
+   <script>
+    window.onload = function() {
+        var textDiv = document.querySelector('.text');
+        var headings = textDiv.querySelectorAll('h3');
+        function animateHeading(heading, callback) {
+            var text = heading.textContent.trim();
+            heading.textContent = ''; 
+            var i = 0;
+            var interval = setInterval(function() {
+                if (i < text.length) {
+                    heading.textContent += text.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(interval);
+                    if (callback) {
+                        callback();
+                    }
+                }
+            }, 100);
+        }
+
+        animateHeading(headings[0], function() {
+            setTimeout(function() {
+                animateHeading(headings[1]);
+            }, 1000);
+        });
+    };
+</script>
+   <!-- /////javascript -->
+    <script src="script.js"></script>
+    <script src="model.js"></script>
+    <script src="image.js"></script>
+</body>
+</html>
